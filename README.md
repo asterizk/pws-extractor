@@ -14,7 +14,7 @@ A Python script to fetch current weather data (e.g., precipitation rate and accu
    ```ini
    [weather]
    api_key = your_api_key_here
-   station_id = KFLSARAS2216
+   station_id = your_station_id_here
    ```
 
 3. Set up a virtual environment and install dependencies (use the Makefile for convenience):

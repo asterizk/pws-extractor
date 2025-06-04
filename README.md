@@ -10,7 +10,12 @@ A Python script to fetch current weather data (e.g., precipitation rate and accu
    cd pws-extractor
    ```
 
-2. Create a configuration file `weather.conf` in the root directory with your API key and station ID:
+2. Copy the example configuration file and fill in your API key and station ID:
+   ```bash
+   cp weather.conf.example weather.conf
+   ```
+
+   Then edit `weather.conf`:
    ```ini
    [weather]
    api_key = your_api_key_here
@@ -40,5 +45,5 @@ A Python script to fetch current weather data (e.g., precipitation rate and accu
 
 ## Notes
 
-- `weather.conf` is used to securely separate sensitive configuration (like your API key) from the main script.
-- This file can be safely committed to source control as long as you do not include a real API key.
+- `weather.conf` contains sensitive configuration like your API key and is ignored via `.gitignore`.
+- `weather.conf.example` is a safe placeholder for others to copy and customize.

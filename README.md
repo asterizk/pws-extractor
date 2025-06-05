@@ -1,6 +1,6 @@
-# PWS Weather Fetcher
+# PWS Weather Fetcher (SwiftBar Plugin)
 
-A Python script to fetch current weather data (e.g., precipitation rate and accumulation) from a Weather Underground PWS API.
+A SwiftBar-compatible plugin that displays current precipitation data from your Weather Underground Personal Weather Station (PWS) in your macOS menu bar. This version uses **only the Python standard library** — no dependencies or virtual environment required.
 
 ## Setup
 
@@ -22,28 +22,35 @@ A Python script to fetch current weather data (e.g., precipitation rate and accu
    station_id = your_station_id_here
    ```
 
-3. Set up a virtual environment and install dependencies (use the Makefile for convenience):
-   ```bash
-   make setup
-   ```
-
-4. Run the script:
+3. Run the script manually to test:
    ```bash
    make run
    ```
 
-5. To remove the virtual environment and Python cache files:
-   ```bash
-   make clean
-   ```
+## Using as a SwiftBar Plugin
+
+To install the plugin into your SwiftBar plugin directory:
+
+```bash
+make install
+```
+
+To uninstall it later:
+
+```bash
+make uninstall
+```
+
+After installation, the plugin should appear in your macOS menu bar if SwiftBar is running.
 
 ## Requirements
 
-- Python 3.7+
-- Access to a Weather Underground API key
-- `make` (available on macOS/Linux or via GNU Make on Windows)
+- Python 3.7+ (included by default on macOS)
+- SwiftBar: https://github.com/swiftbar/SwiftBar
+- No virtual environment or Python packages needed
 
 ## Notes
 
 - `weather.conf` contains sensitive configuration like your API key and is ignored via `.gitignore`.
 - `weather.conf.example` is a safe placeholder for others to copy and customize.
+- The plugin script prints total daily accumulation in the menu bar and current precipitation rate in the dropdown.

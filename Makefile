@@ -1,11 +1,20 @@
-.PHONY: setup run clean
+.PHONY: run clean config install uninstall
 
-setup:
-	python3 -m venv venv
-	source venv/bin/activate && pip install -r requirements.txt
+PLUGIN_NAME = pws_precip.5m.py
+PLUGIN_DIR = $(HOME)/Library/Application\ Support/SwiftBar/Plugins
 
 run:
-	source venv/bin/activate && python weather_fetcher.py
+	python3 $(PLUGIN_NAME)
 
 clean:
-	rm -rf venv __pycache__ *.pyc
+	rm -rf __pycache__ *.pyc
+
+config:
+	cp weather.conf.example weather.conf
+
+install:
+	mkdir -p "$(PLUGIN_DIR)"
+	ln -sf "$(PWD)/$(PLUGIN_NAME)" "$(PLUGIN_DIR)/$(PLUGIN_NAME)"
+
+uninstall:
+	rm -f "$(PLUGIN_DIR)/$(PLUGIN_NAME)"

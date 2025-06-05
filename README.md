@@ -1,4 +1,4 @@
-# PWS Weather Fetcher (SwiftBar Plugin)
+# SwiftBar PWS Precipitation Plugin
 
 A SwiftBar-compatible plugin that displays current precipitation data from your Weather Underground Personal Weather Station (PWS) in your macOS menu bar. This version uses **only the Python standard library** — no dependencies or virtual environment required.
 
@@ -6,8 +6,8 @@ A SwiftBar-compatible plugin that displays current precipitation data from your 
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/yourname/pws-extractor.git
-   cd pws-extractor
+   git clone https://github.com/yourusername/swiftbar-pws-precip.git
+   cd swiftbar-pws-precip
    ```
 
 2. Copy the example configuration file and fill in your API key and station ID:

@@ -6,7 +6,7 @@ A SwiftBar-compatible plugin that displays current precipitation data from your 
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/yourusername/swiftbar-pws-precip.git
+   git clone https://github.com/asterizk/swiftbar-pws-precip.git
    cd swiftbar-pws-precip
    ```
 

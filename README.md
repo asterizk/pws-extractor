@@ -1,5 +1,7 @@
 # SwiftBar PWS Precipitation Plugin
 
+![Screenshot of SwiftBar PWS Precipitation Plugin in action](docs/menubar.png)
+
 A SwiftBar-compatible plugin that displays current precipitation data from your Weather Underground Personal Weather Station (PWS) in your macOS menu bar. This version uses **only the Python standard library** — no dependencies or virtual environment required.
 
 ## Setup

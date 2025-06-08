@@ -1,6 +1,6 @@
 .PHONY: run clean config install uninstall
 
-PLUGIN_NAME = swiftbar-pws-precip.5m.py
+PLUGIN_NAME = smart-pws-weather.5m.py
 PLUGIN_DIR = $(HOME)/Library/Application Support/SwiftBar/Plugins
 
 run:

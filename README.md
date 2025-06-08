@@ -67,7 +67,7 @@ make uninstall  # Remove plugin symlink from SwiftBar
 
 ## 📁 Files
 
-- `pws_precip.5m.py`: The main SwiftBar plugin script
+- `pws-smartweather.5m.py`: The main SwiftBar plugin script
 - `weather.conf`: Your local API credentials (excluded from git)
 - `.gitignore`: Ensures credentials and temp files aren't tracked
 - `Makefile`: Easy install/uninstall of the plugin

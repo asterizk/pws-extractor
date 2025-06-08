@@ -8,7 +8,10 @@ This SwiftBar plugin displays live weather information from a personal weather s
 
 ## 🌦️ Features
 
+
 - **Dynamic display** in the macOS menu bar:
+- **Clickable submenu link** to open your PWS dashboard on Weather Underground
+
   - ⛆ `precipTotal` (accumulated rainfall today) shows if it's raining
   - 🌡️ `temp` and dew point with a comfort emoji if it's not raining
 - **Emoji-based comfort indicator** based on dew point:

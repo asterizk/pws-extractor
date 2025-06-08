@@ -136,6 +136,7 @@ try:
     print("---")
     for line in submenu:
         print(line)
+    print(f"Open station page | href=https://www.wunderground.com/dashboard/pws/{station_id}")
 
 except Exception as e:
     error_output(str(e))

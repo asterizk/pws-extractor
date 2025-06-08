@@ -1,5 +1,7 @@
 # SwiftBar PWS SmartWeather Plugin
 
+![Screenshot of SwiftBar PWS Precipitation Plugin in action](docs/menubar.png)
+
 This SwiftBar plugin displays live weather information from a personal weather station (PWS) using the Weather Underground API. It conditionally presents the most relevant weather data depending on current conditions — precipitation, temperature, dew point, and barometric pressure trend.
 
 ---

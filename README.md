@@ -51,6 +51,36 @@ After installation, the plugin should appear in your macOS menu bar if SwiftBar 
 - SwiftBar: https://github.com/swiftbar/SwiftBar
 - No virtual environment or Python packages needed
 
+
+## Features
+- 🌡️ **Pressure trends**: Tracks barometric pressure over time and conditionally displays only when relevant:
+  - ↗️ Rising
+  - ↘️ Falling
+  This is stored in a hidden `.pressure` file in the plugin directory. Pressure is only shown if it's rising or falling significantly.
+
+
+- 💧 **Rain display**: Precipitation total shown in the menu bar and rain rate shown in the dropdown if it's currently raining.
+- 💨 **Wind display**: If it's windy or gusty, the plugin shows wind speed, gusts, and direction with appropriate emojis:
+  - 🍃 Calm
+  - 💨 Breezy
+  - 🌬️ Windy
+  - 🌪️ Gusty
+- 🌡️ **Comfort levels**: Uses dew point to show a comfort indicator emoji:
+  - 🏜️ Dry
+  - 😊 Comfortable
+  - 😐 Humid
+  - 😓 Muggy
+  - 🥵 Oppressive
+  - 🔥 Miserable
+- 🥵 **Heat index** and 🥶 **Wind chill** shown if significantly different from actual temperature.
+- 🌞 **UV index emoji indicators**:
+  - 🌑 Low (0–2)
+  - 🌤️ Moderate (3–5)
+  - ☀️ High (6–7)
+  - 🔆 Very High (8–10)
+  - 🧴 Extreme (11+)
+
+
 ## Notes
 
 - `weather.conf` contains sensitive configuration like your API key and is ignored via `.gitignore`.

@@ -29,8 +29,8 @@ This SwiftBar plugin displays live weather information from a personal weather s
 
 2. **Clone this repository** and configure your plugin:
    ```bash
-   git clone https://github.com/asterizk/swiftbar-pws-precip.git
-   cd swiftbar-pws-precip
+   git clone https://github.com/asterizk/swiftbar-pws-smartweather.git 
+   cd swiftbar-pws-smartweather 
    ```
 
 3. **Configure your Weather Underground API credentials**:

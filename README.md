@@ -1,88 +1,87 @@
-# SwiftBar PWS Precipitation Plugin
+# SwiftBar PWS SmartWeather Plugin
 
-![Screenshot of SwiftBar PWS Precipitation Plugin in action](docs/menubar.png)
+This SwiftBar plugin displays live weather information from a personal weather station (PWS) using the Weather Underground API. It conditionally presents the most relevant weather data depending on current conditions — precipitation, temperature, dew point, and barometric pressure trend.
 
-A SwiftBar-compatible plugin that displays current precipitation data from your Weather Underground Personal Weather Station (PWS) in your macOS menu bar. This version uses **only the Python standard library** — no dependencies or virtual environment required.
+---
 
-## Setup
+## 🌦️ Features
 
-1. Clone this repo:
+- **Dynamic display** in the macOS menu bar:
+  - ⛆ `precipTotal` (accumulated rainfall today) shows if it's raining
+  - 🌡️ `temp` and dew point with a comfort emoji if it's not raining
+- **Emoji-based comfort indicator** based on dew point:
+  - 🥶 ≤ 40°F: Dry
+  - 😊 41–60°F: Pleasant
+  - 😓 61–70°F: Muggy
+  - 🥵 > 70°F: Oppressive
+- **⏱️ Barometric pressure trends** (if available):
+  - 📈 Rising
+  - 📉 Falling
+  - ➖ Steady
+- Pressure trend is inferred by comparing current pressure with a value stored in a temporary file from the previous update.
+
+---
+
+## 🔧 Setup
+
+1. **Install SwiftBar**:  
+   Download from [https://github.com/swiftbar/SwiftBar](https://github.com/swiftbar/SwiftBar)
+
+2. **Clone this repository** and configure your plugin:
    ```bash
    git clone https://github.com/asterizk/swiftbar-pws-precip.git
    cd swiftbar-pws-precip
    ```
 
-2. Copy the example configuration file and fill in your API key and station ID:
+3. **Configure your Weather Underground API credentials**:
+   Copy the example file and insert your actual values:
    ```bash
    cp weather.conf.example weather.conf
    ```
 
-   Then edit `weather.conf`:
+   `weather.conf` contents:
    ```ini
    [weather]
    api_key = your_api_key_here
    station_id = your_station_id_here
    ```
 
-3. Run the script manually to test:
+4. **Install the plugin**:
    ```bash
-   make run
+   make install
    ```
 
-## Using as a SwiftBar Plugin
+5. ✅ It should now appear in your menu bar! (Updates every 5 minutes.)
 
-To install the plugin into your SwiftBar plugin directory:
+---
 
-```bash
-make install
-```
-
-To uninstall it later:
+## 🧹 Optional Commands
 
 ```bash
-make uninstall
+make run        # Run the plugin manually from terminal
+make install    # Symlink the plugin into SwiftBar's plugin folder
+make uninstall  # Remove plugin symlink from SwiftBar
 ```
 
-After installation, the plugin should appear in your macOS menu bar if SwiftBar is running.
+---
 
-## Requirements
+## 📁 Files
 
-- Python 3.7+ (included by default on macOS)
-- SwiftBar: https://github.com/swiftbar/SwiftBar
-- No virtual environment or Python packages needed
+- `pws_precip.5m.py`: The main SwiftBar plugin script
+- `weather.conf`: Your local API credentials (excluded from git)
+- `.gitignore`: Ensures credentials and temp files aren't tracked
+- `Makefile`: Easy install/uninstall of the plugin
 
+---
 
-## Features
-- 🌡️ **Pressure trends**: Tracks barometric pressure over time and conditionally displays only when relevant:
-  - ↗️ Rising
-  - ↘️ Falling
-  This is stored in a hidden `.pressure` file in the plugin directory. Pressure is only shown if it's rising or falling significantly.
+## 📌 Notes
 
+- Plugin stores previous pressure reading in a temporary file in the same directory to determine pressure trends.
+- API usage follows Weather Underground’s guidelines (see their docs for rate limits).
+- Script is dependency-free (uses only Python standard library).
 
-- 💧 **Rain display**: Precipitation total shown in the menu bar and rain rate shown in the dropdown if it's currently raining.
-- 💨 **Wind display**: If it's windy or gusty, the plugin shows wind speed, gusts, and direction with appropriate emojis:
-  - 🍃 Calm
-  - 💨 Breezy
-  - 🌬️ Windy
-  - 🌪️ Gusty
-- 🌡️ **Comfort levels**: Uses dew point to show a comfort indicator emoji:
-  - 🏜️ Dry
-  - 😊 Comfortable
-  - 😐 Humid
-  - 😓 Muggy
-  - 🥵 Oppressive
-  - 🔥 Miserable
-- 🥵 **Heat index** and 🥶 **Wind chill** shown if significantly different from actual temperature.
-- 🌞 **UV index emoji indicators**:
-  - 🌑 Low (0–2)
-  - 🌤️ Moderate (3–5)
-  - ☀️ High (6–7)
-  - 🔆 Very High (8–10)
-  - 🧴 Extreme (11+)
+---
 
+## 🔐 Privacy
 
-## Notes
-
-- `weather.conf` contains sensitive configuration like your API key and is ignored via `.gitignore`.
-- `weather.conf.example` is a safe placeholder for others to copy and customize.
-- The plugin script prints total daily accumulation in the menu bar and current precipitation rate in the dropdown.
+This plugin does **not** send data anywhere except to Weather Underground for retrieving weather data for your configured station.

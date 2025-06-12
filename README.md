@@ -15,10 +15,12 @@ This SwiftBar plugin displays live weather information from a personal weather s
   - ⛆ `precipTotal` (accumulated rainfall today) shows if it's raining
   - 🌡️ `temp` and dew point with a comfort emoji if it's not raining
 - **Emoji-based comfort indicator** based on dew point:
-  - 🥶 ≤ 40°F: Dry
-  - 😊 41–60°F: Pleasant
-  - 😓 61–70°F: Muggy
-  - 🥵 > 70°F: Oppressive
+  - 🏜️ < 50°F: Dry
+  - 😊 50–59°F: Comfortable
+  - 😐 60–66°F: Humid
+  - 😓 67–71°F: Muggy
+  - 🥵 72–75°F: Oppressive
+  - 🔥 ≥ 76°F: Miserable
 - **⏱️ Barometric pressure trends** (if available):
   - 📈 Rising
   - 📉 Falling
@@ -82,7 +84,7 @@ make uninstall  # Remove plugin symlink from SwiftBar
 ## 📌 Notes
 
 - Plugin stores previous pressure reading in a temporary file in the same directory to determine pressure trends.
-- API usage follows Weather Underground’s guidelines (see their docs for rate limits).
+- API usage follows Weather Underground's guidelines (see their docs for rate limits).
 - Script is dependency-free (uses only Python standard library).
 
 ---

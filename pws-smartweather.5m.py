@@ -24,9 +24,9 @@ def dew_point_feel_emoji(dewpt):
         return "🏜️ Dry"
     elif dewpt < 60:
         return "😊 Comfortable"
-    elif dewpt < 66:
+    elif dewpt < 67:
         return "😐 Humid"
-    elif dewpt < 71:
+    elif dewpt < 72:
         return "😓 Muggy"
     elif dewpt < 76:
         return "🥵 Oppressive"

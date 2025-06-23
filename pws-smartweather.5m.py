@@ -109,8 +109,8 @@ try:
     submenu = []
 
     if precip_rate > 0:
-        output = f"⛆ {precip_total} in"
-        submenu = [f"Rate: {precip_rate} in/hr"]
+        output = f"⛆ {precip_rate} in/hr"
+        submenu = [f"💧 {precip_total} in"]
     elif wind_speed >= 10 or (wind_gust and wind_gust >= 15):
         dir_txt = direction_from_degrees(wind_dir)
         emoji = wind_emoji(wind_speed, wind_gust)
